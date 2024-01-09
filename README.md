@@ -5,24 +5,30 @@
 
 See README files in subfolders.
 
-Client application is React/Redux with react-spring for simple animation.
+Client application - React/Redux with React-Spring for simple animation.
 
-Server side is REST API by .NET Core 7 + EF to Sqlite DB.
+The backend is a REST API from .NET Core 7 + EF for Sqlite DB.
 
 
-### Сервер:    
+### Server:
 
-Реализовать API в котором есть 2 метода- Add, Delete. Метод Add принимает строку. При вызове метода Add, строка сохраняется в БД, при вызове метода Delete - удаляется.    
-Стек технологий ASP.Net Core, EF, БД- на выбор.    
+Design and implement an API with two methods: `Add` and `Delete`:
+- The `Add` method receives a string and stores it in the database.
+- When you select `Delete`, the entry should be deleted.
+
+The tech. stack is ASP.Net Core, EF and Sqlite DB.
     
-### Клиент:
+### Client:
 
-1. Сделать страничку, на которой будет 2 кнопки: Добавить и Удалить.    
-Под кнопками располагается горизонтальный лист.    
-При нажатии на кнопку Добавить в лист, на первую позицию добавляется квадратный элемент, ширина которого равна 20% от ширины экрана, цвет элемента - рандомный. Так же необходимо отправлять цвет в API в метод Add.    
-При нажатии на кнопку Удалить - удаляется последний элемент из листа. Так же необходимо вызывать API для удаления элемента на сервере.    
-При реализации необходимо использовать Redux Toolkit, при добавлении и удалении нужно сделать анимацию, используя react-spring.    
+1. Make a page with 2 buttons: Add and Delete.
+    There should be a list below the buttons.
+    When you click the Add button, the square element should be added to the first position.
+    The width of the square should be 20% of the screen width. The color should be random.
+    There must be an AJAX call to the "Add" endpoint to save the new entry to the server.
+    When you click the Delete button, the item on the right should be deleted and then deleted on the server side using the Delete route.
+    The Redux Toolkit should be used.
+    Visual animation effects should be implemented using Spring react on adding and deleting.
 
-2. Анимация.    
-При добавлении нового элемента, все существующие элементы должны плавно смещаться вправо, новый элемент должен выезжать с левой стороны экрана. При удалении, последний элемент должен уезжать вправо, все остальные элементы должны находиться на месте.
-
+3. Animation
+     When inserting a new square, all existing elements must be shifted to the right.
+     When removed, the last element should move to the right. The remaining squares should remain in their places.
